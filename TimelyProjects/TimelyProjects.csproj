@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="AWSSDK.CognitoSync" Version="3.3.100.91" />
+    <PackageReference Include="AWSSDK.CognitoIdentity" Version="3.3.100.91" />
+    <PackageReference Include="AWSSDK.Core" Version="3.3.103.56" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.101.82" />
+    <PackageReference Include="Amazon.Extensions.CognitoAuthentication" Version="1.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Helpers\ObservableList.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TimelyProjects.Views.SignInSignUp"
+             Title="Timely Projects">
+    <Grid BackgroundColor="SlateGray">
+        <Grid Padding="12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" FontSize="Title" Text="Timely Projects" TextColor="WhiteSmoke" HorizontalOptions="Center"/>
+            <StackLayout x:Name="SignInGrid" Grid.Row="2" HorizontalOptions="Center">
+                <Label x:Name="SignInError" IsVisible="False" Text="" TextColor="Red" />
+                <Label Text="Email" TextColor="WhiteSmoke" />
+                <Entry x:Name="EmailEntry" Placeholder="john@email.com" PlaceholderColor="LightGray" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Password" TextColor="WhiteSmoke" />
+                    <Button  HorizontalOptions="EndAndExpand" Margin="0, -15" Padding="0" Text="Forgot?" TextColor="LightSkyBlue" Clicked="ForgotPassword_Clicked" />
+                </StackLayout>
+                <Entry x:Name="PasswordEntry" IsPassword="True" Placeholder="********" PlaceholderColor="LightGray" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Sign In" Clicked="SignIn_Clicked" BackgroundColor="DarkSlateGray" CornerRadius="5" TextColor="WhiteSmoke" Padding="5" Margin="5" />
+                    <Button Text="Create an Account" Clicked="CreateAccount_Clicked" BackgroundColor="DarkSlateGray" CornerRadius="5" TextColor="WhiteSmoke" Padding="5" Margin="5" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="CreateAccountGrid" IsVisible="false" Opacity="0" Grid.Row="2" HorizontalOptions="Center">
+                <Label x:Name="CreateAccountError" IsVisible="False" Text="" TextColor="Red" />
+                <Label Text="Email" TextColor="WhiteSmoke" />
+                <Entry x:Name="NewEmailEntry" Placeholder="john@email.com" PlaceholderColor="LightGray" />
+                <Label Text="Password" TextColor="WhiteSmoke" />
+                <Entry x:Name="NewPasswordEntry" IsPassword="True" Placeholder="********" PlaceholderColor="LightGray" />
+                <Label Text="Confirm Password" TextColor="WhiteSmoke" />
+                <Entry x:Name="NewPasswordConfirmEntry" IsPassword="True" Placeholder="********" PlaceholderColor="LightGray" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Create Account" Clicked="SignUp_Clicked" BackgroundColor="DarkSlateGray" CornerRadius="5" TextColor="WhiteSmoke" Padding="5" Margin="5" />
+                    <Button Text="Already Have an Account" Clicked="AlreadyHaveAccount_Clicked" BackgroundColor="DarkSlateGray" CornerRadius="5" TextColor="WhiteSmoke" Padding="5" Margin="5" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout x:Name="ForgotPasswordGrid" IsVisible="False" Grid.Row="2" HorizontalOptions="Center">
+                <Label x:Name="ForgotPasswordError" IsVisible="False" Text="" TextColor="Red" />
+                <Label Text="Email To Reset Password" TextColor="WhiteSmoke" />
+                <Entry x:Name="ForgotPasswordEmailEntry" Placeholder="john@email.com" PlaceholderColor="LightGray" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Reset Password" Clicked="ResetPassword_Clicked" BackgroundColor="DarkSlateGray" CornerRadius="5" TextColor="WhiteSmoke" Padding="5" Margin="5" />
+                    <Button Text="Cancel" Clicked="CancelForgotPassword_Clicked" BackgroundColor="DarkSlateGray" CornerRadius="5" TextColor="WhiteSmoke" Padding="5" Margin="5" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="ConfirmEmailGrid" IsVisible="False" Grid.Row="2" HorizontalOptions="Center">
+                <Label x:Name="ConfirmEmailError" IsVisible="False" Text="" TextColor="Red" />
+                <Label Text="Pleases check your email and click the verification link to confirm your email address." TextColor="WhiteSmoke" />
+                <Button Text="Email Address Confirmed" Clicked="EmailConfirmed_Clicked" BackgroundColor="DarkSlateGray" CornerRadius="5" TextColor="WhiteSmoke" Padding="5" Margin="5" />
+            </StackLayout>
+        </Grid>
+        <Grid x:Name="Loading" IsVisible="False" >
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.2" />
+            <ActivityIndicator IsRunning="True" HorizontalOptions="Fill" VerticalOptions="CenterAndExpand"/>
+        </Grid>
+    </Grid>
+        
+</ContentPage>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<helpers:DefaultToolbarPage
+    xmlns:helpers="clr-namespace:TimelyProjects.Helpers"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TimelyProjects.Views.MyHome"
+    Title="">
+    <Grid>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" BindableLayout.ItemsSource="{Binding Projects}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{Binding Name}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </StackLayout>
+        <Grid IsVisible="{Binding IsLoading}">
+            <BoxView BackgroundColor="SlateGray" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <ActivityIndicator HorizontalOptions="Center" VerticalOptions="CenterAndExpand" IsRunning="{Binding IsLoading}" />
+        </Grid>
+
+    </Grid>
+</helpers:DefaultToolbarPage>
