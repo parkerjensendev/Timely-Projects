@@ -10,7 +10,7 @@ autom4te.cache/
 *.tar.gz
 tarballs/
 test-results/
-Helpers/Constants.cs
+TimelyProjects/Helpers/Constants.cs
 
 # Mac bundle stuff
 *.dmg
